@@ -1,27 +1,12 @@
-# 🏥 MedQuery — Agentic RAG System for Clinical Document Q&A
-
-> Upload clinical PDFs. Ask natural language questions. Get grounded, source-cited answers — powered by GPT-4o, LangChain, and Pinecone.
-
-[![Python](https://img.shields.io/badge/Python-3.11-blue)](https://python.org)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.115-green)](https://fastapi.tiangolo.com)
-[![LangChain](https://img.shields.io/badge/LangChain-0.3-orange)](https://langchain.com)
-[![Docker](https://img.shields.io/badge/Docker-Compose-blue)](https://docker.com)
-
----
-
-## 🎯 What It Does
+# MedQuery: Agentic RAG System for Clinical Document Q&A
 
 MedQuery is a production-ready RAG (Retrieval-Augmented Generation) system that:
-
 - **Ingests** clinical PDFs (guidelines, research papers, discharge summaries) into a vector database
 - **Answers** natural language questions using a LangChain ReAct agent grounded in your documents
 - **Cites** sources with filename and page number for every response
 - **Evaluates** itself using RAGAS metrics to measure and track answer quality
 
----
-
 ## 🏗️ Architecture
-
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                        INGESTION PIPELINE                       │
@@ -41,9 +26,7 @@ MedQuery is a production-ready RAG (Retrieval-Augmented Generation) system that:
 └─────────────────────────────────────────────────────────────────┘
 ```
 
----
-
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Layer | Technology | Purpose |
 |---|---|---|
@@ -60,15 +43,13 @@ MedQuery is a production-ready RAG (Retrieval-Augmented Generation) system that:
 
 ---
 
-## 🚀 Quick Start
-
+## Quick Start
 ### Prerequisites
 - Python 3.11+
 - Docker + Docker Compose
 - OpenAI API key
 
 ### 1. Clone and configure
-
 ```bash
 git clone https://github.com/yourusername/medquery.git
 cd medquery
@@ -84,7 +65,6 @@ USE_PINECONE=false          # use ChromaDB locally
 ```
 
 ### 2. Run with Docker
-
 ```bash
 docker-compose up --build
 ```
@@ -93,7 +73,6 @@ docker-compose up --build
 - **API docs:** http://localhost:8000/docs
 
 ### 3. Run locally (without Docker)
-
 ```bash
 # Backend
 cd backend
@@ -107,9 +86,7 @@ streamlit run app.py
 ```
 
 ---
-
-## 📡 API Reference
-
+## API Reference
 ### Upload Document
 ```http
 POST /api/documents/upload
@@ -147,7 +124,7 @@ GET /api/evaluation/summary
 
 ---
 
-## 📊 RAGAS Metrics
+## RAGAS Metrics
 
 | Metric | Description | Target |
 |---|---|---|
@@ -158,8 +135,7 @@ GET /api/evaluation/summary
 
 ---
 
-## 🌐 Production Deployment (AWS EC2)
-
+## Production Deployment (AWS EC2)
 ```bash
 # On your EC2 instance (Ubuntu 22.04)
 sudo apt update && sudo apt install docker.io docker-compose -y
@@ -176,46 +152,12 @@ docker-compose up -d --build
 
 ---
 
-## 📁 Project Structure
-
-```
-medquery/
-├── backend/
-│   ├── app/
-│   │   ├── main.py              # FastAPI app entry point
-│   │   ├── api/
-│   │   │   ├── documents.py     # Upload / delete endpoints
-│   │   │   ├── query.py         # RAG query endpoint
-│   │   │   └── evaluation.py    # RAGAS evaluation endpoints
-│   │   ├── core/
-│   │   │   ├── config.py        # Settings & env vars
-│   │   │   └── vector_store.py  # ChromaDB / Pinecone manager
-│   │   └── services/
-│   │       ├── ingestion.py     # PDF → chunks → embeddings
-│   │       ├── rag_agent.py     # LangChain ReAct agent
-│   │       └── evaluation.py    # RAGAS scoring
-│   ├── requirements.txt
-│   ├── Dockerfile
-│   └── .env.example
-├── frontend/
-│   ├── app.py                   # Streamlit UI
-│   ├── requirements.txt
-│   └── Dockerfile
-├── docker-compose.yml
-└── README.md
-```
-
----
-
-## 🔒 Important Notes
-
+## Important Notes
 - MedQuery is a **research and portfolio project**. It is not validated for clinical use.
 - Never upload real patient data. Use de-identified or synthetic documents only.
 - API keys should never be committed to version control.
 
 ---
 
-## 👩‍💻 Author
-
-**Jesmine Ting** — AI Engineer  
-[LinkedIn](#) · [GitHub](#)
+## Author
+**Jesmine Ting**
