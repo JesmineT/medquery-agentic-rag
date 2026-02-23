@@ -1,12 +1,11 @@
 # MedQuery: Agentic RAG System for Clinical Document Q&A
-
 MedQuery is a production-ready RAG (Retrieval-Augmented Generation) system that:
 - **Ingests** clinical PDFs (guidelines, research papers, discharge summaries) into a vector database
 - **Answers** natural language questions using a LangChain ReAct agent grounded in your documents
 - **Cites** sources with filename and page number for every response
 - **Evaluates** itself using RAGAS metrics to measure and track answer quality
 
-## 🏗️ Architecture
+## Architecture
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                        INGESTION PIPELINE                       │
@@ -27,7 +26,6 @@ MedQuery is a production-ready RAG (Retrieval-Augmented Generation) system that:
 ```
 
 ## Tech Stack
-
 | Layer | Technology | Purpose |
 |---|---|---|
 | LLM | OpenAI GPT-4o | Answer generation |
@@ -41,7 +39,6 @@ MedQuery is a production-ready RAG (Retrieval-Augmented Generation) system that:
 | Cloud Storage | AWS S3 | PDF storage |
 | Evaluation | RAGAS | RAG quality metrics |
 
----
 
 ## Quick Start
 ### Prerequisites
@@ -85,7 +82,7 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
----
+
 ## API Reference
 ### Upload Document
 ```http
@@ -94,6 +91,7 @@ Content-Type: multipart/form-data
 
 file: <PDF file>
 ```
+
 
 ### Query
 ```http
@@ -122,10 +120,7 @@ Content-Type: application/json
 GET /api/evaluation/summary
 ```
 
----
-
 ## RAGAS Metrics
-
 | Metric | Description | Target |
 |---|---|---|
 | **Faithfulness** | Is the answer supported by retrieved context? | > 0.85 |
@@ -133,7 +128,6 @@ GET /api/evaluation/summary
 | **Context Precision** | Are retrieved chunks actually relevant? | > 0.75 |
 | **Context Recall** | Were all relevant pieces retrieved? | > 0.75 |
 
----
 
 ## Production Deployment (AWS EC2)
 ```bash
@@ -150,14 +144,9 @@ cp backend/.env.example backend/.env
 docker-compose up -d --build
 ```
 
----
-
 ## Important Notes
 - MedQuery is a **research and portfolio project**. It is not validated for clinical use.
 - Never upload real patient data. Use de-identified or synthetic documents only.
 - API keys should never be committed to version control.
 
----
-
-## Author
-**Jesmine Ting**
+## Author: **Jesmine Ting 2026**
