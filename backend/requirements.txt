@@ -1,0 +1,32 @@
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+python-multipart==0.0.9
+pydantic==2.8.2
+pydantic-settings==2.4.0
+
+# LangChain
+langchain==0.3.0
+langchain-openai==0.2.0
+langchain-community==0.3.0
+langchain-chroma==0.1.4
+langchain-pinecone==0.2.0
+
+# Vector DBs
+chromadb==0.5.11
+pinecone-client==5.0.1
+
+# PDF processing
+pypdf==4.3.1
+pymupdf==1.24.10
+
+# AWS
+boto3==1.35.0
+
+# Evaluation
+ragas==0.2.0
+datasets==3.0.0
+
+# Utilities
+python-dotenv==1.0.1
+
+nltk==3.9.1
